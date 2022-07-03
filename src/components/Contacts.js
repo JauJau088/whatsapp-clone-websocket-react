@@ -1,6 +1,14 @@
+import { useContacts } from '../contexts/ContactsProvider';
+
 const Contacts = () => {
+  const { contacts } = useContacts();
+
   return (
-    <div>Contacts</div>
+    <ul>
+      {contacts.map((c) => {
+        return <li key={c.id}>{c.name}</li>
+      })}
+    </ul>
   )
 }
 
