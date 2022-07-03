@@ -13,7 +13,8 @@ const useLocalStorage = (key, initialValue) => {
     // Initial state comes from local storage
     const jsonValue = localStorage.getItem(prefixKey);
     // only if not null or undefined
-    if (jsonValue != null) return JSON.parse(jsonValue);
+    // and also not 'undefined'
+    if (jsonValue != null && jsonValue !== 'undefined') return JSON.parse(jsonValue);
     // otherwise set to initialValue
     // if initialValue is not set then it'll return undefined 
     return typeof initialValue === 'function' ? initialValue() : initialValue;

@@ -1,0 +1,7 @@
+const Dashboard = ({ id }) => {
+  return (
+    <div>{id}</div>
+  );
+}
+
+export default Dashboard;
